@@ -1,0 +1,31 @@
+@startuml
+!pragma layout smetana
+skinparam defaultFontName "Arial"
+skinparam defaultFontSize 15
+skinparam shadowing false
+skinparam backgroundColor white
+skinparam ArrowColor #34495E
+skinparam componentBackgroundColor #F1F5F9
+skinparam ParticipantBackgroundColor #F1F5F9
+skinparam sequenceMessageAlign center
+skinparam maxMessageSize 250
+top to bottom direction
+component "Клиент\nclient.py" as C
+component "Веб-сервер\nwebserver.py" as W
+package "Сервер приложений" {
+ component "HTTP-обработчик\napplication.py" as A
+ component "NumberRepository\nСостояние числа" as R
+ component "Стандартный вывод\nstdout" as L
+}
+database "PostgreSQL\nСостояния чисел" as D
+C --> W : HTTP POST /increment
+W --> A : переслать запрос
+A --> R : обработать число
+R --> D : pg8000 / advisory locks
+A --> L : ошибка
+note bottom of D
+number_state - первый исход для числа
+request_history - все корректные обращения
+Транзакционные блокировки n и n + 1
+end note
+@enduml

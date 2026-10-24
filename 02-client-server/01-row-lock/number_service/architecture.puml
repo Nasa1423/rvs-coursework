@@ -1,0 +1,73 @@
+@startuml structure
+!pragma layout smetana
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam backgroundColor white
+skinparam ArrowColor #393735
+skinparam componentBackgroundColor #F6F3EE
+skinparam componentBorderColor #71685D
+skinparam ParticipantBackgroundColor #F6F3EE
+skinparam ParticipantBorderColor #71685D
+skinparam sequenceMessageAlign center
+skinparam maxMessageSize 180
+top to bottom direction
+component "request.py\nКлиент" as C
+component "proxy.py\nHTTP-веб-сервер" as W
+package "Прикладной уровень" {
+ component "server.py\nПроверки и транзакция" as A
+ component "stdout\nСообщения об ошибках" as L
+}
+database "PostgreSQL\nИстория и принятые числа" as D
+C --> W : POST /increment
+W --> A : пересылка запроса
+A --> D : SQL
+A --> L : ошибка
+@enduml
+
+@startuml interaction
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam backgroundColor white
+skinparam ArrowColor #393735
+skinparam componentBackgroundColor #F6F3EE
+skinparam componentBorderColor #71685D
+skinparam ParticipantBackgroundColor #F6F3EE
+skinparam ParticipantBorderColor #71685D
+skinparam sequenceMessageAlign center
+skinparam maxMessageSize 180
+hide footbox
+autonumber
+actor Клиент as C
+participant "Веб-сервер" as W
+participant Приложение as A
+database PostgreSQL as D
+participant stdout as L
+C -> W : POST {number: n}
+W -> A : запрос
+A -> A : проверить тип и диапазон
+alt неверный ввод
+ A -> L : INVALID_INPUT
+ A --> W : 400
+ W --> C : ошибка ввода
+else корректное число
+ A -> D : SELECT guard FOR UPDATE
+ D --> A : блокировка получена
+ A -> D : есть n в истории?\nобработано n + 1?
+ D --> A : данные для выбора исхода
+ alt повтор или запрещённое число
+  A -> D : записать отказ в историю; COMMIT
+  A -> L : код ошибки + request_id
+  A --> W : 409 + ошибка
+ else число принято
+  A -> D : записать n как принятое;\nзаписать историю; COMMIT
+  A --> W : 200 + результат n + 1
+ end
+ W --> C : ответ
+end
+note over A,D
+Проверка повтора имеет приоритет.
+При ошибке БД: ROLLBACK и HTTP 503.
+end note
+@enduml

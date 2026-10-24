@@ -1,0 +1,20 @@
+{
+  "achievement_2": {
+    "postgresql_only": true,
+    "stdout": true,
+    "both_uml_diagrams": true,
+    "local_tests_passed": [
+      10,
+      11,
+      11
+    ]
+  },
+  "achievement_1": {
+    "functional_commands_verified": true,
+    "physical_tx_four_cycles": false,
+    "required_minimum_found": false,
+    "highest_level_complete": false,
+    "pending": "Define measurement point and permitted phases with teacher"
+  },
+  "achievement_3": "not in requested implementation scope"
+}

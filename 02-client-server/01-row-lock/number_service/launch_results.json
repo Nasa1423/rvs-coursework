@@ -1,0 +1,41 @@
+{
+  "startup": true,
+  "shutdown": true,
+  "stdout_inherited": true,
+  "both_business_errors_in_stdout": true,
+  "business_errors_absent_from_stderr": true,
+  "requests": [
+    {
+      "input": 5,
+      "status": 200,
+      "body": {
+        "result": 6,
+        "request_id": "620de80f-4c22-4a7a-8c75-8bc2ebe9707d"
+      }
+    },
+    {
+      "input": 5,
+      "status": 409,
+      "body": {
+        "error": "DUPLICATE_NUMBER",
+        "request_id": "51c0d8dd-5b1d-4fe6-95a3-45ee327ec24c"
+      }
+    },
+    {
+      "input": 4,
+      "status": 409,
+      "body": {
+        "error": "PREDECESSOR_OF_PROCESSED",
+        "request_id": "fa0444c9-1737-4f8c-8b08-55c4b7cdf891"
+      }
+    },
+    {
+      "input": 6,
+      "status": 200,
+      "body": {
+        "result": 7,
+        "request_id": "383a6a80-3ce9-4988-b8ce-59cd91efbb95"
+      }
+    }
+  ]
+}

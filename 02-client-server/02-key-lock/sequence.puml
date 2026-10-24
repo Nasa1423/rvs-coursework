@@ -1,0 +1,54 @@
+@startuml
+skinparam defaultFontName "Arial"
+skinparam defaultFontSize 15
+skinparam shadowing false
+skinparam backgroundColor white
+skinparam ArrowColor #34495E
+skinparam componentBackgroundColor #F1F5F9
+skinparam ParticipantBackgroundColor #F1F5F9
+skinparam sequenceMessageAlign center
+skinparam maxMessageSize 250
+hide footbox
+autonumber
+actor "Клиент" as C
+participant "Веб-сервер" as W
+participant "Приложение" as A
+database "База данных" as D
+participant "stdout" as L
+C -> W : POST {number: n}
+W -> A : HTTP-запрос
+A -> A : проверить тип и диапазон
+alt некорректный ввод
+ A -> L : INVALID_INPUT
+ A --> W : 400 + ошибка
+ W --> C : ошибка ввода
+else корректное число
+ A -> D : BEGIN; READ COMMITTED\nLOCK n; LOCK n + 1
+ A -> D : есть ли n в истории?
+ D --> A : да / нет
+ alt n уже поступало
+  A -> A : DUPLICATE_NUMBER
+ else первое обращение
+  A -> D : успешно ли обработано n + 1?
+  D --> A : да / нет
+  alt обработано
+   A -> A : PREDECESSOR_OF_PROCESSED
+  else не обработано
+   A -> A : OK
+  end
+ end
+ A -> D : при первом запросе записать number_state\nзаписать любой исход в request_history
+ A -> D : COMMIT
+ D --> A : сохранено; блокировка освобождена
+ alt исход OK
+  A --> W : 200, result = n + 1
+ else бизнес-отказ
+  A -> L : код + n + request_id
+  A --> W : 409, error
+ end
+ W --> C : ответ приложения
+end
+note over A,D
+При технической ошибке: ROLLBACK, запись в stdout, HTTP 503.
+end note
+@enduml

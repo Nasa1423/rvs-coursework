@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.venv/
+.runtime/
+build/
+.DS_Store
+*.log
+*.out
+*.obj
+*.eep.hex
+.env

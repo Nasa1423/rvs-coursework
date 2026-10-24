@@ -1,0 +1,31 @@
+@startuml
+!pragma layout smetana
+skinparam defaultFontName "Arial"
+skinparam defaultFontSize 15
+skinparam shadowing false
+skinparam backgroundColor white
+skinparam ArrowColor #34495E
+skinparam componentBackgroundColor #F1F5F9
+skinparam ParticipantBackgroundColor #F1F5F9
+skinparam sequenceMessageAlign center
+skinparam maxMessageSize 250
+top to bottom direction
+component "Клиент\nclient.py" as C
+component "Веб-сервер\nwebserver.py" as W
+package "Сервер приложений" {
+ component "HTTP-обработчик\napplication.py" as A
+ component "decide() + process()\nПроверка и повторы транзакции" as R
+ component "Стандартный вывод\nstdout" as L
+}
+database "PostgreSQL\nЖурнал events" as D
+C --> W : HTTP POST /increment
+W --> A : переслать запрос
+A --> R : обработать число
+R --> D : pg8000 / SQL
+A --> L : ошибка
+note bottom of D
+events - единственное хранилище исходов
+История и успешные числа - SQL-представления
+Конфликты обнаруживает SERIALIZABLE
+end note
+@enduml

@@ -1,0 +1,29 @@
+name: Web requirements
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  integration:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - path: 02-client-server/01-row-lock/number_service
+            test: verify.py
+          - path: 02-client-server/02-key-lock
+            test: test_integration.py
+          - path: 02-client-server/03-serializable
+            test: test_integration.py
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install PostgreSQL
+        run: sudo apt-get update && sudo apt-get install -y postgresql
+      - name: Python dependencies
+        run: python -m pip install -r "${{ matrix.path }}/requirements.txt"
+      - name: Integration and stdout requirements
+        working-directory: ${{ matrix.path }}
+        run: python "${{ matrix.test }}" --pg-bin "$(pg_config --bindir)" --report "$RUNNER_TEMP/results.json"
