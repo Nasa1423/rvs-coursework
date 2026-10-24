@@ -1,0 +1,5082 @@
+{
+  "passed": 337,
+  "timing_point": "first OUT UDR, not physical TX",
+  "error_cycles": [
+    1,
+    4
+  ],
+  "measured_timer_starts": 38048,
+  "error_histogram": {
+    "4": 11958,
+    "3": 15628,
+    "1": 7236,
+    "2": 3226
+  },
+  "hardware_tested": false,
+  "simavr_uart_override": "cycles_per_byte=160 only; CPU and Timer1 unmodified",
+  "minimum_ping_pong": {
+    "period1": 6016,
+    "period2": 6016,
+    "sum": 12032,
+    "phase": 3008,
+    "scope": "exact minimum accepted by the documented reserved-window policy"
+  },
+  "cases": [
+    {
+      "name": "default",
+      "timer_starts": 311,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 311,
+      "reply": "",
+      "state": [
+        16000,
+        24000,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "minimum",
+      "timer_starts": 985,
+      "error_min": 3,
+      "error_max": 4,
+      "complete_timer_lines": 984,
+      "reply": "!OK\r\n",
+      "state": [
+        6016,
+        6016,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "below_minimum",
+      "timer_starts": 118,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 118,
+      "reply": "!ERR\r\n",
+      "state": [
+        16000,
+        24000,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "odd_period",
+      "timer_starts": 985,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 984,
+      "reply": "!OK\r\n",
+      "state": [
+        6017,
+        6017,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "unequal_minimum_multiple",
+      "timer_starts": 275,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 275,
+      "reply": "!OK\r\n",
+      "state": [
+        6016,
+        12032,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "period_one",
+      "timer_starts": 93,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 93,
+      "reply": "!OK\r\n",
+      "state": [
+        24000,
+        24000,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "period_two",
+      "timer_starts": 139,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 139,
+      "reply": "!OK\r\n",
+      "state": [
+        16000,
+        16000,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "restart",
+      "timer_starts": 116,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 116,
+      "reply": "!OK\r\n",
+      "state": [
+        16000,
+        24000,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "long_gcd_validation",
+      "timer_starts": 311,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 311,
+      "reply": "!ERR\r\n",
+      "state": [
+        16000,
+        24000,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "max_period",
+      "timer_starts": 41,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 41,
+      "reply": "!OK\r\n",
+      "state": [
+        57344,
+        57344,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "over_max_period",
+      "timer_starts": 118,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 118,
+      "reply": "!ERR\r\n",
+      "state": [
+        16000,
+        24000,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "long_text_one",
+      "timer_starts": 116,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 116,
+      "reply": "!OK\r\n",
+      "state": [
+        16000,
+        24000,
+        16,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "long_text_two",
+      "timer_starts": 116,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 116,
+      "reply": "!OK\r\n",
+      "state": [
+        16000,
+        24000,
+        4,
+        16
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "both_long",
+      "timer_starts": 504,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 503,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        12288,
+        12288,
+        16,
+        16
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "too_long",
+      "timer_starts": 118,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 118,
+      "reply": "!ERR\r\n",
+      "state": [
+        16000,
+        24000,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "empty_texts",
+      "timer_starts": 671,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 671,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        4736,
+        4736,
+        0,
+        0
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "below_empty_min",
+      "timer_starts": 324,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 324,
+      "reply": "!OK\r\n!OK\r\n!ERR\r\n",
+      "state": [
+        16000,
+        24000,
+        0,
+        0
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "reject_after_change",
+      "timer_starts": 699,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 699,
+      "reply": "!OK\r\n!ERR\r\n",
+      "state": [
+        6016,
+        6016,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "changed_strings",
+      "timer_starts": 219,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 219,
+      "reply": "!OK\r\n!OK\r\n",
+      "state": [
+        16000,
+        24000,
+        5,
+        5
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "invalid_0",
+      "timer_starts": 118,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 118,
+      "reply": "!ERR\r\n",
+      "state": [
+        16000,
+        24000,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "invalid_1",
+      "timer_starts": 118,
+      "error_min": 2,
+      "error_max": 4,
+      "complete_timer_lines": 118,
+      "reply": "!ERR\r\n",
+      "state": [
+        16000,
+        24000,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "invalid_2",
+      "timer_starts": 118,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 118,
+      "reply": "!ERR\r\n",
+      "state": [
+        16000,
+        24000,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "invalid_3",
+      "timer_starts": 118,
+      "error_min": 2,
+      "error_max": 4,
+      "complete_timer_lines": 118,
+      "reply": "!ERR\r\n",
+      "state": [
+        16000,
+        24000,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "invalid_4",
+      "timer_starts": 118,
+      "error_min": 2,
+      "error_max": 4,
+      "complete_timer_lines": 118,
+      "reply": "!ERR\r\n",
+      "state": [
+        16000,
+        24000,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "invalid_5",
+      "timer_starts": 118,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 118,
+      "reply": "!ERR\r\n",
+      "state": [
+        16000,
+        24000,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "invalid_6",
+      "timer_starts": 118,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 118,
+      "reply": "!ERR\r\n",
+      "state": [
+        16000,
+        24000,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "invalid_7",
+      "timer_starts": 118,
+      "error_min": 2,
+      "error_max": 4,
+      "complete_timer_lines": 118,
+      "reply": "!ERR\r\n",
+      "state": [
+        16000,
+        24000,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "invalid_8",
+      "timer_starts": 118,
+      "error_min": 2,
+      "error_max": 4,
+      "complete_timer_lines": 118,
+      "reply": "!ERR\r\n",
+      "state": [
+        16000,
+        24000,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "invalid_9",
+      "timer_starts": 118,
+      "error_min": 2,
+      "error_max": 4,
+      "complete_timer_lines": 118,
+      "reply": "!ERR\r\n",
+      "state": [
+        16000,
+        24000,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "invalid_10",
+      "timer_starts": 118,
+      "error_min": 2,
+      "error_max": 4,
+      "complete_timer_lines": 118,
+      "reply": "!ERR\r\n",
+      "state": [
+        16000,
+        24000,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "invalid_11",
+      "timer_starts": 118,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 118,
+      "reply": "!ERR\r\n",
+      "state": [
+        16000,
+        24000,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "invalid_12",
+      "timer_starts": 118,
+      "error_min": 2,
+      "error_max": 4,
+      "complete_timer_lines": 118,
+      "reply": "!ERR\r\n",
+      "state": [
+        16000,
+        24000,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "rx_phase_0",
+      "timer_starts": 29,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 29,
+      "reply": "!OK\r\n",
+      "state": [
+        16000,
+        24000,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "rx_phase_32",
+      "timer_starts": 29,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 29,
+      "reply": "!OK\r\n",
+      "state": [
+        16000,
+        24000,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "rx_phase_64",
+      "timer_starts": 29,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 29,
+      "reply": "!OK\r\n",
+      "state": [
+        16000,
+        24000,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "rx_phase_96",
+      "timer_starts": 29,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 29,
+      "reply": "!OK\r\n",
+      "state": [
+        16000,
+        24000,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "rx_phase_128",
+      "timer_starts": 29,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 29,
+      "reply": "!OK\r\n",
+      "state": [
+        16000,
+        24000,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "rx_phase_160",
+      "timer_starts": 29,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 29,
+      "reply": "!OK\r\n",
+      "state": [
+        16000,
+        24000,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "rx_phase_192",
+      "timer_starts": 29,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 29,
+      "reply": "!OK\r\n",
+      "state": [
+        16000,
+        24000,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "rx_phase_224",
+      "timer_starts": 29,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 29,
+      "reply": "!OK\r\n",
+      "state": [
+        16000,
+        24000,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "rx_phase_256",
+      "timer_starts": 29,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 29,
+      "reply": "!OK\r\n",
+      "state": [
+        16000,
+        24000,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "rx_phase_288",
+      "timer_starts": 29,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 29,
+      "reply": "!OK\r\n",
+      "state": [
+        16000,
+        24000,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "rx_phase_320",
+      "timer_starts": 29,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 29,
+      "reply": "!OK\r\n",
+      "state": [
+        16000,
+        24000,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "rx_phase_352",
+      "timer_starts": 29,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 29,
+      "reply": "!OK\r\n",
+      "state": [
+        16000,
+        24000,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "rx_phase_384",
+      "timer_starts": 29,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 29,
+      "reply": "!OK\r\n",
+      "state": [
+        16000,
+        24000,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "rx_phase_416",
+      "timer_starts": 29,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 29,
+      "reply": "!OK\r\n",
+      "state": [
+        16000,
+        24000,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "rx_phase_448",
+      "timer_starts": 29,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 29,
+      "reply": "!OK\r\n",
+      "state": [
+        16000,
+        24000,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "rx_phase_480",
+      "timer_starts": 29,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 29,
+      "reply": "!OK\r\n",
+      "state": [
+        16000,
+        24000,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_0_0",
+      "timer_starts": 145,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 145,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        4736,
+        4736,
+        0,
+        0
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_0_1",
+      "timer_starts": 141,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 141,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        4896,
+        4896,
+        0,
+        1
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_0_2",
+      "timer_starts": 137,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 137,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        5056,
+        5056,
+        0,
+        2
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_0_3",
+      "timer_starts": 134,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 134,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        5216,
+        5216,
+        0,
+        3
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_0_4",
+      "timer_starts": 130,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 130,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        5376,
+        5376,
+        0,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_0_5",
+      "timer_starts": 127,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 127,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        5536,
+        5536,
+        0,
+        5
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_0_6",
+      "timer_starts": 124,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 124,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        5696,
+        5696,
+        0,
+        6
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_0_7",
+      "timer_starts": 121,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 121,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        5856,
+        5856,
+        0,
+        7
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_0_8",
+      "timer_starts": 119,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 118,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6016,
+        6016,
+        0,
+        8
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_0_9",
+      "timer_starts": 116,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 116,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6176,
+        6176,
+        0,
+        9
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_0_10",
+      "timer_starts": 113,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 113,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6336,
+        6336,
+        0,
+        10
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_0_11",
+      "timer_starts": 111,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 111,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6496,
+        6496,
+        0,
+        11
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_0_12",
+      "timer_starts": 109,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 109,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6656,
+        6656,
+        0,
+        12
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_0_13",
+      "timer_starts": 107,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 106,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6816,
+        6816,
+        0,
+        13
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_0_14",
+      "timer_starts": 105,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 104,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6976,
+        6976,
+        0,
+        14
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_0_15",
+      "timer_starts": 103,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 102,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7136,
+        7136,
+        0,
+        15
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_0_16",
+      "timer_starts": 101,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 101,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7296,
+        7296,
+        0,
+        16
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_1_0",
+      "timer_starts": 141,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 141,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        4896,
+        4896,
+        1,
+        0
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_1_1",
+      "timer_starts": 137,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 137,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        5056,
+        5056,
+        1,
+        1
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_1_2",
+      "timer_starts": 134,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 133,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        5216,
+        5216,
+        1,
+        2
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_1_3",
+      "timer_starts": 130,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 130,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        5376,
+        5376,
+        1,
+        3
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_1_4",
+      "timer_starts": 127,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 127,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        5536,
+        5536,
+        1,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_1_5",
+      "timer_starts": 124,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 124,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        5696,
+        5696,
+        1,
+        5
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_1_6",
+      "timer_starts": 121,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 121,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        5856,
+        5856,
+        1,
+        6
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_1_7",
+      "timer_starts": 119,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 118,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6016,
+        6016,
+        1,
+        7
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_1_8",
+      "timer_starts": 116,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 116,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6176,
+        6176,
+        1,
+        8
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_1_9",
+      "timer_starts": 113,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 113,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6336,
+        6336,
+        1,
+        9
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_1_10",
+      "timer_starts": 111,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 111,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6496,
+        6496,
+        1,
+        10
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_1_11",
+      "timer_starts": 109,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 109,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6656,
+        6656,
+        1,
+        11
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_1_12",
+      "timer_starts": 107,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 106,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6816,
+        6816,
+        1,
+        12
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_1_13",
+      "timer_starts": 105,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 104,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6976,
+        6976,
+        1,
+        13
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_1_14",
+      "timer_starts": 103,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 102,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7136,
+        7136,
+        1,
+        14
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_1_15",
+      "timer_starts": 101,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 101,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7296,
+        7296,
+        1,
+        15
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_1_16",
+      "timer_starts": 99,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 99,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7456,
+        7456,
+        1,
+        16
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_2_0",
+      "timer_starts": 137,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 137,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        5056,
+        5056,
+        2,
+        0
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_2_1",
+      "timer_starts": 134,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 133,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        5216,
+        5216,
+        2,
+        1
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_2_2",
+      "timer_starts": 130,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 130,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        5376,
+        5376,
+        2,
+        2
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_2_3",
+      "timer_starts": 127,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 127,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        5536,
+        5536,
+        2,
+        3
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_2_4",
+      "timer_starts": 124,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 124,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        5696,
+        5696,
+        2,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_2_5",
+      "timer_starts": 121,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 121,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        5856,
+        5856,
+        2,
+        5
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_2_6",
+      "timer_starts": 119,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 118,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6016,
+        6016,
+        2,
+        6
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_2_7",
+      "timer_starts": 116,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 116,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6176,
+        6176,
+        2,
+        7
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_2_8",
+      "timer_starts": 113,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 113,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6336,
+        6336,
+        2,
+        8
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_2_9",
+      "timer_starts": 111,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 111,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6496,
+        6496,
+        2,
+        9
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_2_10",
+      "timer_starts": 109,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 109,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6656,
+        6656,
+        2,
+        10
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_2_11",
+      "timer_starts": 107,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 106,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6816,
+        6816,
+        2,
+        11
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_2_12",
+      "timer_starts": 105,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 104,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6976,
+        6976,
+        2,
+        12
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_2_13",
+      "timer_starts": 103,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 102,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7136,
+        7136,
+        2,
+        13
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_2_14",
+      "timer_starts": 101,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 101,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7296,
+        7296,
+        2,
+        14
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_2_15",
+      "timer_starts": 99,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 99,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7456,
+        7456,
+        2,
+        15
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_2_16",
+      "timer_starts": 98,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 98,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7616,
+        7616,
+        2,
+        16
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_3_0",
+      "timer_starts": 134,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 133,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        5216,
+        5216,
+        3,
+        0
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_3_1",
+      "timer_starts": 130,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 130,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        5376,
+        5376,
+        3,
+        1
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_3_2",
+      "timer_starts": 127,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 127,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        5536,
+        5536,
+        3,
+        2
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_3_3",
+      "timer_starts": 124,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 124,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        5696,
+        5696,
+        3,
+        3
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_3_4",
+      "timer_starts": 121,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 121,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        5856,
+        5856,
+        3,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_3_5",
+      "timer_starts": 119,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 118,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6016,
+        6016,
+        3,
+        5
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_3_6",
+      "timer_starts": 116,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 116,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6176,
+        6176,
+        3,
+        6
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_3_7",
+      "timer_starts": 113,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 113,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6336,
+        6336,
+        3,
+        7
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_3_8",
+      "timer_starts": 111,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 111,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6496,
+        6496,
+        3,
+        8
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_3_9",
+      "timer_starts": 109,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 109,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6656,
+        6656,
+        3,
+        9
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_3_10",
+      "timer_starts": 107,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 106,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6816,
+        6816,
+        3,
+        10
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_3_11",
+      "timer_starts": 105,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 104,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6976,
+        6976,
+        3,
+        11
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_3_12",
+      "timer_starts": 103,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 102,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7136,
+        7136,
+        3,
+        12
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_3_13",
+      "timer_starts": 101,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 101,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7296,
+        7296,
+        3,
+        13
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_3_14",
+      "timer_starts": 99,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 99,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7456,
+        7456,
+        3,
+        14
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_3_15",
+      "timer_starts": 98,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 97,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7616,
+        7616,
+        3,
+        15
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_3_16",
+      "timer_starts": 96,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 96,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7776,
+        7776,
+        3,
+        16
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_4_0",
+      "timer_starts": 130,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 130,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        5376,
+        5376,
+        4,
+        0
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_4_1",
+      "timer_starts": 127,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 127,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        5536,
+        5536,
+        4,
+        1
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_4_2",
+      "timer_starts": 124,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 124,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        5696,
+        5696,
+        4,
+        2
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_4_3",
+      "timer_starts": 121,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 121,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        5856,
+        5856,
+        4,
+        3
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_4_4",
+      "timer_starts": 118,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 118,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6016,
+        6016,
+        4,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_4_5",
+      "timer_starts": 116,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 116,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6176,
+        6176,
+        4,
+        5
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_4_6",
+      "timer_starts": 113,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 113,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6336,
+        6336,
+        4,
+        6
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_4_7",
+      "timer_starts": 111,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 111,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6496,
+        6496,
+        4,
+        7
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_4_8",
+      "timer_starts": 109,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 109,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6656,
+        6656,
+        4,
+        8
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_4_9",
+      "timer_starts": 107,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 106,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6816,
+        6816,
+        4,
+        9
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_4_10",
+      "timer_starts": 105,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 104,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6976,
+        6976,
+        4,
+        10
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_4_11",
+      "timer_starts": 103,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 102,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7136,
+        7136,
+        4,
+        11
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_4_12",
+      "timer_starts": 101,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 101,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7296,
+        7296,
+        4,
+        12
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_4_13",
+      "timer_starts": 99,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 99,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7456,
+        7456,
+        4,
+        13
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_4_14",
+      "timer_starts": 98,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 97,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7616,
+        7616,
+        4,
+        14
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_4_15",
+      "timer_starts": 96,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 96,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7776,
+        7776,
+        4,
+        15
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_4_16",
+      "timer_starts": 95,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 94,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7936,
+        7936,
+        4,
+        16
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_5_0",
+      "timer_starts": 127,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 127,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        5536,
+        5536,
+        5,
+        0
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_5_1",
+      "timer_starts": 124,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 124,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        5696,
+        5696,
+        5,
+        1
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_5_2",
+      "timer_starts": 121,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 121,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        5856,
+        5856,
+        5,
+        2
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_5_3",
+      "timer_starts": 118,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 118,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6016,
+        6016,
+        5,
+        3
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_5_4",
+      "timer_starts": 116,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 116,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6176,
+        6176,
+        5,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_5_5",
+      "timer_starts": 113,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 113,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6336,
+        6336,
+        5,
+        5
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_5_6",
+      "timer_starts": 111,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 111,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6496,
+        6496,
+        5,
+        6
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_5_7",
+      "timer_starts": 109,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 109,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6656,
+        6656,
+        5,
+        7
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_5_8",
+      "timer_starts": 107,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 106,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6816,
+        6816,
+        5,
+        8
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_5_9",
+      "timer_starts": 105,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 104,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6976,
+        6976,
+        5,
+        9
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_5_10",
+      "timer_starts": 103,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 102,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7136,
+        7136,
+        5,
+        10
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_5_11",
+      "timer_starts": 101,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 101,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7296,
+        7296,
+        5,
+        11
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_5_12",
+      "timer_starts": 99,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 99,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7456,
+        7456,
+        5,
+        12
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_5_13",
+      "timer_starts": 98,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 97,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7616,
+        7616,
+        5,
+        13
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_5_14",
+      "timer_starts": 96,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 96,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7776,
+        7776,
+        5,
+        14
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_5_15",
+      "timer_starts": 95,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 94,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7936,
+        7936,
+        5,
+        15
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_5_16",
+      "timer_starts": 93,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 93,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8096,
+        8096,
+        5,
+        16
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_6_0",
+      "timer_starts": 124,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 124,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        5696,
+        5696,
+        6,
+        0
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_6_1",
+      "timer_starts": 121,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 121,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        5856,
+        5856,
+        6,
+        1
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_6_2",
+      "timer_starts": 118,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 118,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6016,
+        6016,
+        6,
+        2
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_6_3",
+      "timer_starts": 116,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 116,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6176,
+        6176,
+        6,
+        3
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_6_4",
+      "timer_starts": 113,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 113,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6336,
+        6336,
+        6,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_6_5",
+      "timer_starts": 111,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 111,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6496,
+        6496,
+        6,
+        5
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_6_6",
+      "timer_starts": 109,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 109,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6656,
+        6656,
+        6,
+        6
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_6_7",
+      "timer_starts": 107,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 106,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6816,
+        6816,
+        6,
+        7
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_6_8",
+      "timer_starts": 105,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 104,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6976,
+        6976,
+        6,
+        8
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_6_9",
+      "timer_starts": 103,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 103,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7136,
+        7136,
+        6,
+        9
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_6_10",
+      "timer_starts": 101,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 101,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7296,
+        7296,
+        6,
+        10
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_6_11",
+      "timer_starts": 99,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 99,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7456,
+        7456,
+        6,
+        11
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_6_12",
+      "timer_starts": 98,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 97,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7616,
+        7616,
+        6,
+        12
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_6_13",
+      "timer_starts": 96,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 96,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7776,
+        7776,
+        6,
+        13
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_6_14",
+      "timer_starts": 95,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 94,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7936,
+        7936,
+        6,
+        14
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_6_15",
+      "timer_starts": 93,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 93,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8096,
+        8096,
+        6,
+        15
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_6_16",
+      "timer_starts": 92,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 91,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8256,
+        8256,
+        6,
+        16
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_7_0",
+      "timer_starts": 121,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 121,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        5856,
+        5856,
+        7,
+        0
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_7_1",
+      "timer_starts": 118,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 118,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6016,
+        6016,
+        7,
+        1
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_7_2",
+      "timer_starts": 116,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 115,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6176,
+        6176,
+        7,
+        2
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_7_3",
+      "timer_starts": 113,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 113,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6336,
+        6336,
+        7,
+        3
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_7_4",
+      "timer_starts": 111,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 111,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6496,
+        6496,
+        7,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_7_5",
+      "timer_starts": 109,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 109,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6656,
+        6656,
+        7,
+        5
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_7_6",
+      "timer_starts": 107,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 106,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6816,
+        6816,
+        7,
+        6
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_7_7",
+      "timer_starts": 105,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 104,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6976,
+        6976,
+        7,
+        7
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_7_8",
+      "timer_starts": 103,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 103,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7136,
+        7136,
+        7,
+        8
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_7_9",
+      "timer_starts": 101,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 101,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7296,
+        7296,
+        7,
+        9
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_7_10",
+      "timer_starts": 99,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 99,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7456,
+        7456,
+        7,
+        10
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_7_11",
+      "timer_starts": 98,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 97,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7616,
+        7616,
+        7,
+        11
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_7_12",
+      "timer_starts": 96,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 96,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7776,
+        7776,
+        7,
+        12
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_7_13",
+      "timer_starts": 95,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 94,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7936,
+        7936,
+        7,
+        13
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_7_14",
+      "timer_starts": 93,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 93,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8096,
+        8096,
+        7,
+        14
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_7_15",
+      "timer_starts": 92,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 91,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8256,
+        8256,
+        7,
+        15
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_7_16",
+      "timer_starts": 90,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 90,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8416,
+        8416,
+        7,
+        16
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_8_0",
+      "timer_starts": 118,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 118,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6016,
+        6016,
+        8,
+        0
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_8_1",
+      "timer_starts": 116,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 115,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6176,
+        6176,
+        8,
+        1
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_8_2",
+      "timer_starts": 113,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 113,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6336,
+        6336,
+        8,
+        2
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_8_3",
+      "timer_starts": 111,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 111,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6496,
+        6496,
+        8,
+        3
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_8_4",
+      "timer_starts": 109,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 109,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6656,
+        6656,
+        8,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_8_5",
+      "timer_starts": 107,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 106,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6816,
+        6816,
+        8,
+        5
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_8_6",
+      "timer_starts": 105,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 104,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6976,
+        6976,
+        8,
+        6
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_8_7",
+      "timer_starts": 103,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 103,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7136,
+        7136,
+        8,
+        7
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_8_8",
+      "timer_starts": 101,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 101,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7296,
+        7296,
+        8,
+        8
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_8_9",
+      "timer_starts": 99,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 99,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7456,
+        7456,
+        8,
+        9
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_8_10",
+      "timer_starts": 98,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 97,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7616,
+        7616,
+        8,
+        10
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_8_11",
+      "timer_starts": 96,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 96,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7776,
+        7776,
+        8,
+        11
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_8_12",
+      "timer_starts": 95,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 94,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7936,
+        7936,
+        8,
+        12
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_8_13",
+      "timer_starts": 93,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 93,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8096,
+        8096,
+        8,
+        13
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_8_14",
+      "timer_starts": 92,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 91,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8256,
+        8256,
+        8,
+        14
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_8_15",
+      "timer_starts": 90,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 90,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8416,
+        8416,
+        8,
+        15
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_8_16",
+      "timer_starts": 89,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 88,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8576,
+        8576,
+        8,
+        16
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_9_0",
+      "timer_starts": 116,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 115,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6176,
+        6176,
+        9,
+        0
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_9_1",
+      "timer_starts": 113,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 113,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6336,
+        6336,
+        9,
+        1
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_9_2",
+      "timer_starts": 111,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 111,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6496,
+        6496,
+        9,
+        2
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_9_3",
+      "timer_starts": 109,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 109,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6656,
+        6656,
+        9,
+        3
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_9_4",
+      "timer_starts": 107,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 106,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6816,
+        6816,
+        9,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_9_5",
+      "timer_starts": 105,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 104,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6976,
+        6976,
+        9,
+        5
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_9_6",
+      "timer_starts": 103,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 103,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7136,
+        7136,
+        9,
+        6
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_9_7",
+      "timer_starts": 101,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 101,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7296,
+        7296,
+        9,
+        7
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_9_8",
+      "timer_starts": 99,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 99,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7456,
+        7456,
+        9,
+        8
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_9_9",
+      "timer_starts": 98,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 97,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7616,
+        7616,
+        9,
+        9
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_9_10",
+      "timer_starts": 96,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 96,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7776,
+        7776,
+        9,
+        10
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_9_11",
+      "timer_starts": 95,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 94,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7936,
+        7936,
+        9,
+        11
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_9_12",
+      "timer_starts": 93,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 93,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8096,
+        8096,
+        9,
+        12
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_9_13",
+      "timer_starts": 92,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 91,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8256,
+        8256,
+        9,
+        13
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_9_14",
+      "timer_starts": 90,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 90,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8416,
+        8416,
+        9,
+        14
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_9_15",
+      "timer_starts": 89,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 88,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8576,
+        8576,
+        9,
+        15
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_9_16",
+      "timer_starts": 88,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 87,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8736,
+        8736,
+        9,
+        16
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_10_0",
+      "timer_starts": 113,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 113,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6336,
+        6336,
+        10,
+        0
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_10_1",
+      "timer_starts": 111,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 111,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6496,
+        6496,
+        10,
+        1
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_10_2",
+      "timer_starts": 109,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 109,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6656,
+        6656,
+        10,
+        2
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_10_3",
+      "timer_starts": 107,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 106,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6816,
+        6816,
+        10,
+        3
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_10_4",
+      "timer_starts": 105,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 104,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6976,
+        6976,
+        10,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_10_5",
+      "timer_starts": 103,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 103,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7136,
+        7136,
+        10,
+        5
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_10_6",
+      "timer_starts": 101,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 101,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7296,
+        7296,
+        10,
+        6
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_10_7",
+      "timer_starts": 99,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 99,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7456,
+        7456,
+        10,
+        7
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_10_8",
+      "timer_starts": 98,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 97,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7616,
+        7616,
+        10,
+        8
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_10_9",
+      "timer_starts": 96,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 96,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7776,
+        7776,
+        10,
+        9
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_10_10",
+      "timer_starts": 95,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 94,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7936,
+        7936,
+        10,
+        10
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_10_11",
+      "timer_starts": 93,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 93,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8096,
+        8096,
+        10,
+        11
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_10_12",
+      "timer_starts": 92,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 91,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8256,
+        8256,
+        10,
+        12
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_10_13",
+      "timer_starts": 90,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 90,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8416,
+        8416,
+        10,
+        13
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_10_14",
+      "timer_starts": 89,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 88,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8576,
+        8576,
+        10,
+        14
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_10_15",
+      "timer_starts": 88,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 87,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8736,
+        8736,
+        10,
+        15
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_10_16",
+      "timer_starts": 87,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 86,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8896,
+        8896,
+        10,
+        16
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_11_0",
+      "timer_starts": 111,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 111,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6496,
+        6496,
+        11,
+        0
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_11_1",
+      "timer_starts": 109,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 109,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6656,
+        6656,
+        11,
+        1
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_11_2",
+      "timer_starts": 107,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 106,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6816,
+        6816,
+        11,
+        2
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_11_3",
+      "timer_starts": 105,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 104,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6976,
+        6976,
+        11,
+        3
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_11_4",
+      "timer_starts": 103,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 103,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7136,
+        7136,
+        11,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_11_5",
+      "timer_starts": 101,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 101,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7296,
+        7296,
+        11,
+        5
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_11_6",
+      "timer_starts": 99,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 99,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7456,
+        7456,
+        11,
+        6
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_11_7",
+      "timer_starts": 98,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 97,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7616,
+        7616,
+        11,
+        7
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_11_8",
+      "timer_starts": 96,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 96,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7776,
+        7776,
+        11,
+        8
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_11_9",
+      "timer_starts": 94,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 94,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7936,
+        7936,
+        11,
+        9
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_11_10",
+      "timer_starts": 93,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 93,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8096,
+        8096,
+        11,
+        10
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_11_11",
+      "timer_starts": 92,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 91,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8256,
+        8256,
+        11,
+        11
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_11_12",
+      "timer_starts": 90,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 90,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8416,
+        8416,
+        11,
+        12
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_11_13",
+      "timer_starts": 89,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 88,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8576,
+        8576,
+        11,
+        13
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_11_14",
+      "timer_starts": 88,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 87,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8736,
+        8736,
+        11,
+        14
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_11_15",
+      "timer_starts": 86,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 86,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8896,
+        8896,
+        11,
+        15
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_11_16",
+      "timer_starts": 85,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 85,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        9056,
+        9056,
+        11,
+        16
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_12_0",
+      "timer_starts": 109,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 109,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6656,
+        6656,
+        12,
+        0
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_12_1",
+      "timer_starts": 107,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 106,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6816,
+        6816,
+        12,
+        1
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_12_2",
+      "timer_starts": 105,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 104,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6976,
+        6976,
+        12,
+        2
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_12_3",
+      "timer_starts": 103,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 103,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7136,
+        7136,
+        12,
+        3
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_12_4",
+      "timer_starts": 101,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 101,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7296,
+        7296,
+        12,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_12_5",
+      "timer_starts": 99,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 99,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7456,
+        7456,
+        12,
+        5
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_12_6",
+      "timer_starts": 98,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 97,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7616,
+        7616,
+        12,
+        6
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_12_7",
+      "timer_starts": 96,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 95,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7776,
+        7776,
+        12,
+        7
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_12_8",
+      "timer_starts": 94,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 94,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7936,
+        7936,
+        12,
+        8
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_12_9",
+      "timer_starts": 93,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 93,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8096,
+        8096,
+        12,
+        9
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_12_10",
+      "timer_starts": 92,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 91,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8256,
+        8256,
+        12,
+        10
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_12_11",
+      "timer_starts": 90,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 90,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8416,
+        8416,
+        12,
+        11
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_12_12",
+      "timer_starts": 89,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 88,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8576,
+        8576,
+        12,
+        12
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_12_13",
+      "timer_starts": 88,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 87,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8736,
+        8736,
+        12,
+        13
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_12_14",
+      "timer_starts": 86,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 86,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8896,
+        8896,
+        12,
+        14
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_12_15",
+      "timer_starts": 85,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 85,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        9056,
+        9056,
+        12,
+        15
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_12_16",
+      "timer_starts": 84,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 84,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        9216,
+        9216,
+        12,
+        16
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_13_0",
+      "timer_starts": 107,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 106,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6816,
+        6816,
+        13,
+        0
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_13_1",
+      "timer_starts": 105,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 104,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6976,
+        6976,
+        13,
+        1
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_13_2",
+      "timer_starts": 103,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 103,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7136,
+        7136,
+        13,
+        2
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_13_3",
+      "timer_starts": 101,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 101,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7296,
+        7296,
+        13,
+        3
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_13_4",
+      "timer_starts": 99,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 99,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7456,
+        7456,
+        13,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_13_5",
+      "timer_starts": 98,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 97,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7616,
+        7616,
+        13,
+        5
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_13_6",
+      "timer_starts": 96,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 95,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7776,
+        7776,
+        13,
+        6
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_13_7",
+      "timer_starts": 94,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 94,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7936,
+        7936,
+        13,
+        7
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_13_8",
+      "timer_starts": 93,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 93,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8096,
+        8096,
+        13,
+        8
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_13_9",
+      "timer_starts": 92,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 91,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8256,
+        8256,
+        13,
+        9
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_13_10",
+      "timer_starts": 90,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 90,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8416,
+        8416,
+        13,
+        10
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_13_11",
+      "timer_starts": 89,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 88,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8576,
+        8576,
+        13,
+        11
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_13_12",
+      "timer_starts": 88,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 87,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8736,
+        8736,
+        13,
+        12
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_13_13",
+      "timer_starts": 86,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 86,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8896,
+        8896,
+        13,
+        13
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_13_14",
+      "timer_starts": 85,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 85,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        9056,
+        9056,
+        13,
+        14
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_13_15",
+      "timer_starts": 84,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 84,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        9216,
+        9216,
+        13,
+        15
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_13_16",
+      "timer_starts": 83,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 82,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        9376,
+        9376,
+        13,
+        16
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_14_0",
+      "timer_starts": 105,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 104,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        6976,
+        6976,
+        14,
+        0
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_14_1",
+      "timer_starts": 103,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 103,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7136,
+        7136,
+        14,
+        1
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_14_2",
+      "timer_starts": 101,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 101,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7296,
+        7296,
+        14,
+        2
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_14_3",
+      "timer_starts": 99,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 99,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7456,
+        7456,
+        14,
+        3
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_14_4",
+      "timer_starts": 98,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 97,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7616,
+        7616,
+        14,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_14_5",
+      "timer_starts": 96,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 95,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7776,
+        7776,
+        14,
+        5
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_14_6",
+      "timer_starts": 94,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 94,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7936,
+        7936,
+        14,
+        6
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_14_7",
+      "timer_starts": 93,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 93,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8096,
+        8096,
+        14,
+        7
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_14_8",
+      "timer_starts": 92,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 91,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8256,
+        8256,
+        14,
+        8
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_14_9",
+      "timer_starts": 90,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 90,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8416,
+        8416,
+        14,
+        9
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_14_10",
+      "timer_starts": 89,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 88,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8576,
+        8576,
+        14,
+        10
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_14_11",
+      "timer_starts": 88,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 87,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8736,
+        8736,
+        14,
+        11
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_14_12",
+      "timer_starts": 86,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 86,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8896,
+        8896,
+        14,
+        12
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_14_13",
+      "timer_starts": 85,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 85,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        9056,
+        9056,
+        14,
+        13
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_14_14",
+      "timer_starts": 84,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 84,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        9216,
+        9216,
+        14,
+        14
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_14_15",
+      "timer_starts": 83,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 82,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        9376,
+        9376,
+        14,
+        15
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_14_16",
+      "timer_starts": 82,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 81,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        9536,
+        9536,
+        14,
+        16
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_15_0",
+      "timer_starts": 103,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 103,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7136,
+        7136,
+        15,
+        0
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_15_1",
+      "timer_starts": 101,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 101,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7296,
+        7296,
+        15,
+        1
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_15_2",
+      "timer_starts": 99,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 99,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7456,
+        7456,
+        15,
+        2
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_15_3",
+      "timer_starts": 98,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 97,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7616,
+        7616,
+        15,
+        3
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_15_4",
+      "timer_starts": 96,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 95,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7776,
+        7776,
+        15,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_15_5",
+      "timer_starts": 94,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 94,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7936,
+        7936,
+        15,
+        5
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_15_6",
+      "timer_starts": 93,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 93,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8096,
+        8096,
+        15,
+        6
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_15_7",
+      "timer_starts": 92,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 91,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8256,
+        8256,
+        15,
+        7
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_15_8",
+      "timer_starts": 90,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 90,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8416,
+        8416,
+        15,
+        8
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_15_9",
+      "timer_starts": 89,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 88,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8576,
+        8576,
+        15,
+        9
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_15_10",
+      "timer_starts": 88,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 87,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8736,
+        8736,
+        15,
+        10
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_15_11",
+      "timer_starts": 86,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 86,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8896,
+        8896,
+        15,
+        11
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_15_12",
+      "timer_starts": 85,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 85,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        9056,
+        9056,
+        15,
+        12
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_15_13",
+      "timer_starts": 84,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 84,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        9216,
+        9216,
+        15,
+        13
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_15_14",
+      "timer_starts": 83,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 82,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        9376,
+        9376,
+        15,
+        14
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_15_15",
+      "timer_starts": 82,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 81,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        9536,
+        9536,
+        15,
+        15
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_15_16",
+      "timer_starts": 81,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 80,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        9696,
+        9696,
+        15,
+        16
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_16_0",
+      "timer_starts": 101,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 101,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7296,
+        7296,
+        16,
+        0
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_16_1",
+      "timer_starts": 99,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 99,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7456,
+        7456,
+        16,
+        1
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_16_2",
+      "timer_starts": 98,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 97,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7616,
+        7616,
+        16,
+        2
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_16_3",
+      "timer_starts": 96,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 95,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7776,
+        7776,
+        16,
+        3
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_16_4",
+      "timer_starts": 94,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 94,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        7936,
+        7936,
+        16,
+        4
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_16_5",
+      "timer_starts": 93,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 93,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8096,
+        8096,
+        16,
+        5
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_16_6",
+      "timer_starts": 92,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 91,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8256,
+        8256,
+        16,
+        6
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_16_7",
+      "timer_starts": 90,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 90,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8416,
+        8416,
+        16,
+        7
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_16_8",
+      "timer_starts": 89,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 88,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8576,
+        8576,
+        16,
+        8
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_16_9",
+      "timer_starts": 88,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 87,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8736,
+        8736,
+        16,
+        9
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_16_10",
+      "timer_starts": 86,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 86,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        8896,
+        8896,
+        16,
+        10
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_16_11",
+      "timer_starts": 85,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 85,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        9056,
+        9056,
+        16,
+        11
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_16_12",
+      "timer_starts": 84,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 83,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        9216,
+        9216,
+        16,
+        12
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_16_13",
+      "timer_starts": 83,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 82,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        9376,
+        9376,
+        16,
+        13
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_16_14",
+      "timer_starts": 82,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 81,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        9536,
+        9536,
+        16,
+        14
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_16_15",
+      "timer_starts": 81,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 80,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        9696,
+        9696,
+        16,
+        15
+      ],
+      "timer_stop_count": 0
+    },
+    {
+      "name": "boundary_16_16",
+      "timer_starts": 80,
+      "error_min": 1,
+      "error_max": 4,
+      "complete_timer_lines": 79,
+      "reply": "!OK\r\n!OK\r\n!OK\r\n!OK\r\n",
+      "state": [
+        9856,
+        9856,
+        16,
+        16
+      ],
+      "timer_stop_count": 0
+    }
+  ],
+  "length_boundary_count": 289
+}

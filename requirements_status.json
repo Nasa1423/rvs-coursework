@@ -10,11 +10,18 @@
     ]
   },
   "achievement_1": {
-    "functional_commands_verified": true,
-    "physical_tx_four_cycles": false,
-    "required_minimum_found": false,
-    "highest_level_complete": false,
-    "pending": "Define measurement point and permitted phases with teacher"
+    "current_implementation": "01-avr/01-deadline",
+    "timing_point": "first OUT UDR",
+    "software_timing_max_cycles": 4,
+    "passed_scenarios": 337,
+    "measured_starts": 38048,
+    "minimum_accepted_period_sum_ping_pong": 12032,
+    "minimum_scope": "reserved-window policy G=2048, 500000 baud, 8 MHz",
+    "commands_verified": true,
+    "timer_not_stopped_during_validation": true,
+    "physical_tx_timing_verified": false,
+    "teacher_interpretation_confirmed": false,
+    "legacy_alternatives_meet_four_cycles": false
   },
   "achievement_3": "not in requested implementation scope"
 }

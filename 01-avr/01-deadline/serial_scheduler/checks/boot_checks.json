@@ -1,0 +1,12 @@
+[
+  {
+    "name": "invalid_defaults",
+    "passed": true,
+    "timer_starts": 0
+  },
+  {
+    "name": "minimum_defaults",
+    "passed": true,
+    "timer_starts": 98
+  }
+]

@@ -1,5 +1,5 @@
 """Send one command and distinguish responses from periodic messages.
-Usage: python3 send_command.py --port /dev/cu.usbserial-... '?'
+Usage: python3 send_command.py --port /dev/cu.usbserial-... 'P 1780 1780'
 Requires pyserial. Command periods are four HEX digits in CPU cycles.
 """
 import argparse,time

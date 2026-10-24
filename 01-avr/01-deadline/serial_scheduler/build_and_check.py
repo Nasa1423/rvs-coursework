@@ -14,7 +14,7 @@ def checkout(name,url,revision):
     p=BUILD/name
     if not p.exists():
         run(['git','init',p]);run(['git','-C',p,'remote','add','origin',url])
-    if subprocess.run(['git','-C',str(p),'rev-parse','--verify',revision],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL).returncode:
+    if subprocess.run(['git','-C',str(p),'rev-parse','--verify',revision+'^{commit}'],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL).returncode:
         run(['git','-C',p,'fetch','--depth','1','origin',revision])
     run(['git','-C',p,'checkout','--detach',revision]);return p
 avra=checkout('avra','https://github.com/Ro5bert/avra.git','c78607c5fe64d044001683cbe90f20e85a080cc4')
@@ -37,4 +37,5 @@ asm=BUILD/'serial_scheduler.asm';shutil.copyfile(ROOT/'serial_scheduler.asm',asm
 hexfile=BUILD/'serial_scheduler.hex'
 run([avra/'src/avra','-I',avra/'includes','-o',hexfile,asm])
 run([shutil.which('python3'),ROOT/'checks/check_commands.py','--sim',exe,'--hex',hexfile,'--output',BUILD/'command-tests'])
-print('Functional simulator tests passed. Physical TX timing requires hardware measurement.')
+run([shutil.which('python3'),ROOT/'checks/check_boot.py','--source',ROOT/'serial_scheduler.asm','--avra',avra/'src/avra','--include',avra/'includes','--sim',exe,'--output',BUILD/'boot-tests'])
+print('UDR timing and command tests passed. See build/command-tests/result.json. Physical TX is not measured.')
